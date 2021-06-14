@@ -11,13 +11,21 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+
+* @Route("/programs", name="program_")
+
+*/
+
 
 class ProgramController extends AbstractController
+
+
 
 {
      /**
 
-     * @Route("/programs/", name="program_index")
+     * @Route("/", name="program_index")
 
      */
 
