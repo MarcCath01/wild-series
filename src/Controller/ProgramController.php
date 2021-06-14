@@ -25,7 +25,7 @@ class ProgramController extends AbstractController
 {
      /**
 
-     * @Route("/", name="program_index")
+     * @Route("/", name="index")
 
      */
 
@@ -39,6 +39,22 @@ class ProgramController extends AbstractController
      
          ]);
 
+    }
+
+     /**
+     * @Route("/{id}", name="show", requirements={"id"="\d+"}, methods={"GET"})
+     */
+    
+    public function show(int $id): Response
+    {
+        if(is_int($id)){
+            return $this->render('program/show.html.twig',[
+                'id' => $id
+            ]);
+        }else{
+            return $this->redirectToRoute('status/notfound.html.twig', [], 404);
+        }
+        
     }
 
 }
